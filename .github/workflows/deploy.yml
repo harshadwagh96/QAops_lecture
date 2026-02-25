@@ -120,7 +120,7 @@ jobs:
             -o BatchMode=yes \
             -o ConnectTimeout=10 \
             "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" \
-            "cat > /home/ubuntu/eventhub/backend/.env && chmod 600 /home/ubuntu/eventhub/backend/.env"
+            "cat > /home/ubuntu/eventhub/backend/.env"
           echo "✓ backend/.env written"
 
       # ── Write frontend .env ───────────────────────────────────────────────────
@@ -134,7 +134,7 @@ jobs:
             -o BatchMode=yes \
             -o ConnectTimeout=10 \
             "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" \
-            "cat > /home/ubuntu/eventhub/frontend/.env && chmod 600 /home/ubuntu/eventhub/frontend/.env"
+            "cat > /home/ubuntu/eventhub/frontend/.env"
           echo "✓ frontend/.env written"
 
       # ── Deploy application ────────────────────────────────────────────────────
