@@ -40,18 +40,18 @@ model Event {
 }
 
 model Booking {
-  id             Int       @id @default(autoincrement())
-  eventId        Int
-  userId         Int
-  customerName   String
-  customerEmail  String
-  customerPhone  String
-  quantity       Int
-  totalPrice     Decimal   @db.Decimal(10, 2)
-  status         String    @default("confirmed")
-  bookingRef     String    @unique
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-  event          Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id            Int      @id @default(autoincrement())
+  eventId       Int
+  userId        Int
+  customerName  String
+  customerEmail String
+  customerPhone String
+  quantity      Int
+  totalPrice    Decimal  @db.Decimal(10, 2)
+  status        String   @default("confirmed")
+  bookingRef    String   @unique
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  event         Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
